@@ -29,3 +29,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+
+  fonts:
+    - family: Avenir Next
+      fonts:
+        - asset: assets/fonts/AvenirNext.otf
