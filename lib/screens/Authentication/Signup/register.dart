@@ -26,7 +26,7 @@ class Registration extends StatelessWidget {
                         },
                       ),
                       Text(
-                        "Step 1/6",
+                        "Step 1/2",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 16.0,
@@ -74,53 +74,110 @@ class Registration extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Container(
-                        width: size.width - 90.0,
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 13.0),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.0),
-                          border: Border.all(color: Colors.black12),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Icon(
-                              Icons.text_fields,
-                              color: Colors.black26,
-                            ),
-                            Container(
-                              width: size.width - 210,
-                              // child: Text(
-                              //   "(+62)  8128008011",
-                              //   style: TextStyle(
-                              //       fontSize: 17.0,
-                              //       fontWeight: FontWeight.bold,
-                              //       color: Colors.black87),
-                              // )
-                              child: TextFormField(
-                                decoration: InputDecoration(
-                                    labelText: 'Enter your full name',
-                                    border: InputBorder.none),
-                              ),
-                            ),
-                            Container(
-                              padding: EdgeInsets.all(5.0),
-                              decoration: BoxDecoration(
-                                color: Colors.greenAccent,
-                                shape: BoxShape.circle,
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.black26,
-                                      blurRadius: 2.0,
-                                      offset: Offset(2.0, 2.0)),
+                          width: size.width - 70.0,
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 20.0, vertical: 13.0),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10.0),
+                            border: Border.all(color: Colors.black12),
+                          ),
+                          child: Column(
+                            children: <Widget>[
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: <Widget>[
+                                  Icon(
+                                    Icons.text_fields,
+                                    color: Colors.black26,
+                                  ),
+                                  Container(
+                                    width: size.width - 210,
+                                    // child: Text(
+                                    //   "(+62)  8128008011",
+                                    //   style: TextStyle(
+                                    //       fontSize: 17.0,
+                                    //       fontWeight: FontWeight.bold,
+                                    //       color: Colors.black87),
+                                    // )
+                                    child: TextFormField(
+                                      keyboardType: TextInputType.name,
+                                      decoration: InputDecoration(
+                                          labelText: 'Enter your full name',
+                                          border: InputBorder.none),
+                                    ),
+                                  ),
+                                  // Container(
+                                  //   padding: EdgeInsets.all(5.0),
+                                  //   decoration: BoxDecoration(
+                                  //     color: Colors.greenAccent,
+                                  //     shape: BoxShape.circle,
+                                  //     boxShadow: [
+                                  //       BoxShadow(
+                                  //           color: Colors.black26,
+                                  //           blurRadius: 2.0,
+                                  //           offset: Offset(2.0, 2.0)),
+                                  //     ],
+                                  //   ),
+                                  //   child: Icon(Icons.check,
+                                  //       color: Colors.white, size: 16.0),
+                                  // )
                                 ],
                               ),
-                              child: Icon(Icons.check,
-                                  color: Colors.white, size: 16.0),
-                            )
-                          ],
-                        ),
-                      ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: <Widget>[
+                                  Icon(
+                                    Icons.email,
+                                    color: Colors.black26,
+                                  ),
+                                  Container(
+                                    width: size.width - 210,
+                                    // child: Text(
+                                    //   "(+62)  8128008011",
+                                    //   style: TextStyle(
+                                    //       fontSize: 17.0,
+                                    //       fontWeight: FontWeight.bold,
+                                    //       color: Colors.black87),
+                                    // )
+                                    child: TextFormField(
+                                      keyboardType: TextInputType.emailAddress,
+                                      decoration: InputDecoration(
+                                          labelText: 'Enter your email address',
+                                          border: InputBorder.none),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: <Widget>[
+                                  Icon(
+                                    Icons.lock,
+                                    color: Colors.black26,
+                                  ),
+                                  Container(
+                                    width: size.width - 210,
+                                    // child: Text(
+                                    //   "(+62)  8128008011",
+                                    //   style: TextStyle(
+                                    //       fontSize: 17.0,
+                                    //       fontWeight: FontWeight.bold,
+                                    //       color: Colors.black87),
+                                    // )
+                                    child: TextFormField(
+                                      obscureText: true,
+                                      decoration: InputDecoration(
+                                          labelText: 'Enter a strong password',
+                                          border: InputBorder.none),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          )),
                       GestureDetector(
                         child: Container(
                           padding: EdgeInsets.symmetric(vertical: 15.0),
@@ -140,7 +197,7 @@ class Registration extends StatelessWidget {
                           ),
                         ),
                         onTap: () {
-                          Navigator.pushNamed(context, "/proceed-to-login");
+                          Navigator.pushNamed(context, "/fingerprint");
                         },
                       ),
                     ],

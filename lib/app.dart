@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kashout/screens/Authentication/Signup/fingerprint.dart';
 import 'package:kashout/screens/Authentication/Signup/register.dart';
 import 'package:kashout/screens/Authentication/authStart.dart';
 
@@ -12,6 +13,7 @@ class App extends StatelessWidget {
       routes: {
         "/register": (context) => Registration(),
         "/auth-start": (context) => AuthStart(),
+        "/fingerprint": (context) => Fingerprint(),
       },
     );
   }
