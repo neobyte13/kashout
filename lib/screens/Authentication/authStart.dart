@@ -74,14 +74,19 @@ class AuthStart extends StatelessWidget {
                           Navigator.pushNamed(context, "/register");
                         },
                       ),
-                      Container(
-                        child: Text(
-                          "Login to Account",
-                          style: TextStyle(
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.bold,
-                              color: colors["primary"]),
+                      GestureDetector(
+                        child: Container(
+                          child: Text(
+                            "Login to Account",
+                            style: TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                                color: colors["primary"]),
+                          ),
                         ),
+                        onTap: () {
+                          Navigator.pushNamed(context, "/login");
+                        },
                       ),
                     ],
                   ),

@@ -5,7 +5,6 @@ class Fingerprint extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
     return Scaffold(
       body: Container(
         color: colors["background"],
@@ -44,7 +43,7 @@ class Fingerprint extends StatelessWidget {
                   height: 150.0,
                   decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage("assets/Icon004.png"),
+                          image: AssetImage("assets/images/Icon004.png"),
                           fit: BoxFit.fill)),
                 ),
                 Container(
@@ -75,7 +74,9 @@ class Fingerprint extends StatelessWidget {
                       color: Colors.redAccent,
                     )),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, '/proceed-to-login');
+                  },
                   child: Container(
                     margin: EdgeInsets.only(top: 30.0),
                     child: Row(
@@ -115,7 +116,10 @@ class Fingerprint extends StatelessWidget {
                           color: Color(0xffffffff)),
                     ),
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushReplacementNamed(
+                        context, '/proceed-to-login');
+                  },
                 ),
               ],
             ),
