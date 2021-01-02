@@ -4,7 +4,7 @@ import 'package:kashout/screens/Authentication/Signup/fingerprint.dart';
 import 'package:kashout/screens/Authentication/Signup/proceedToLogin.dart';
 import 'package:kashout/screens/Authentication/Signup/register.dart';
 import 'package:kashout/screens/Authentication/authStart.dart';
-import 'package:kashout/screens/Home/home.dart';
+import 'package:kashout/screens/Home/homescreen.dart';
 
 class App extends StatelessWidget {
   @override
@@ -19,7 +19,7 @@ class App extends StatelessWidget {
         "/fingerprint": (context) => Fingerprint(),
         "/proceed-to-login": (context) => ProceedToLogin(),
         "/login": (context) => Login(),
-        "/home": (context) => HomeScreen(),
+        "/home": (context) => Home(),
       },
     );
   }

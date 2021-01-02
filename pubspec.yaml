@@ -12,6 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.1
+  flutter_svg: ^0.19.2+1
+  google_fonts: ^1.1.1
 
 dev_dependencies:
   flutter_test:
@@ -29,8 +31,12 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/fonts/
 
   fonts:
     - family: Avenir Next
       fonts:
         - asset: assets/fonts/AvenirNext.otf
+    - family: nav_drawer
+      fonts:
+        - asset: assets/fonts/NavDrawer.ttf
