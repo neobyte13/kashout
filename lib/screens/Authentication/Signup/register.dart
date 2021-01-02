@@ -14,8 +14,8 @@ class Registration extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 20.0, vertical: 25.0),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 20.0, vertical: 25.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
