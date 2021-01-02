@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import 'package:kashout/screens/Send%20Money/send3.dart';
+import 'package:kashout/utils/colors.dart';
 
 class Send2 extends StatefulWidget {
   @override
@@ -97,7 +98,6 @@ class _Send2State extends State<Send2> with SingleTickerProviderStateMixin {
                       child: Text(
                         'Transaction Successful',
                         style: TextStyle(
-                            fontFamily: "worksans",
                             fontSize: 17,
                             color: Color.fromRGBO(61, 179, 158, 1)),
                       ),
@@ -130,8 +130,7 @@ class _Send2State extends State<Send2> with SingleTickerProviderStateMixin {
                   onPressed: () => Navigator.pop(context, false),
                 ),
                 title: Text('Send to Daniel',
-                    style:
-                        TextStyle(fontFamily: "worksans", color: Colors.black)),
+                    style: TextStyle(color: Colors.black)),
                 centerTitle: true,
                 backgroundColor: Colors.transparent,
                 elevation: 0,
@@ -154,17 +153,15 @@ class _Send2State extends State<Send2> with SingleTickerProviderStateMixin {
                       ),
                       SizedBox(height: 15),
                       Text(
-                        'Daniel',
+                        'Daniel Etuk',
                         style: TextStyle(
-                            fontFamily: "worksans",
-                            fontSize: 22,
-                            fontWeight: FontWeight.w500),
+                            fontSize: 22, fontWeight: FontWeight.w500),
                       ),
                       SizedBox(height: 15),
                       SizedBox(
                         height: 25,
                         child: FlatButton(
-                          color: Color.fromRGBO(18, 106, 175, 1),
+                          color: colors["primary"],
                           textColor: Colors.white,
                           child: Text(
                             "674532196",
@@ -190,8 +187,7 @@ class _Send2State extends State<Send2> with SingleTickerProviderStateMixin {
                               children: <Widget>[
                                 Text(
                                   'Amount',
-                                  style: TextStyle(
-                                      fontFamily: "worksans", fontSize: 17),
+                                  style: TextStyle(fontSize: 17),
                                 ),
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -199,7 +195,6 @@ class _Send2State extends State<Send2> with SingleTickerProviderStateMixin {
                                     Text(
                                       'NGN',
                                       style: TextStyle(
-                                          fontFamily: "worksans",
                                           fontSize: 12,
                                           color:
                                               Color.fromRGBO(157, 157, 157, 1)),
@@ -209,7 +204,6 @@ class _Send2State extends State<Send2> with SingleTickerProviderStateMixin {
                                       child: Text(
                                         this.amountValue.toString(),
                                         style: TextStyle(
-                                            fontFamily: "worksans",
                                             fontSize: 16,
                                             fontWeight: FontWeight.w500),
                                       ),
@@ -246,8 +240,7 @@ class _Send2State extends State<Send2> with SingleTickerProviderStateMixin {
                               children: <Widget>[
                                 Text(
                                   'Transaction fees',
-                                  style: TextStyle(
-                                      fontFamily: "worksans", fontSize: 17),
+                                  style: TextStyle(fontSize: 17),
                                 ),
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -255,7 +248,6 @@ class _Send2State extends State<Send2> with SingleTickerProviderStateMixin {
                                     Text(
                                       'NGN',
                                       style: TextStyle(
-                                          fontFamily: "worksans",
                                           fontSize: 12,
                                           color:
                                               Color.fromRGBO(157, 157, 157, 1)),
@@ -264,7 +256,6 @@ class _Send2State extends State<Send2> with SingleTickerProviderStateMixin {
                                     Text(
                                       '0.00',
                                       style: TextStyle(
-                                          fontFamily: "worksans",
                                           fontSize: 16,
                                           fontWeight: FontWeight.w500),
                                     ),
@@ -288,16 +279,14 @@ class _Send2State extends State<Send2> with SingleTickerProviderStateMixin {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
                                     Text(
-                                      'Zenbank Account',
+                                      'Kashout Account',
                                       style: TextStyle(
-                                          fontFamily: "worksans",
                                           fontSize: 16,
                                           fontWeight: FontWeight.w500),
                                     ),
                                     Text(
                                       '7865432123',
                                       style: TextStyle(
-                                          fontFamily: "worksans",
                                           fontSize: 12,
                                           color:
                                               Color.fromRGBO(157, 157, 157, 1)),
@@ -324,9 +313,7 @@ class _Send2State extends State<Send2> with SingleTickerProviderStateMixin {
                                   Text(
                                     'Add Note',
                                     style: TextStyle(
-                                        fontFamily: "worksans",
-                                        fontSize: 17,
-                                        color: Color.fromRGBO(18, 106, 175, 1)),
+                                        fontSize: 17, color: colors["primary"]),
                                   ),
                                   Icon(Icons.chevron_right,
                                       color: Color.fromRGBO(157, 157, 157, 1),
@@ -349,14 +336,13 @@ class _Send2State extends State<Send2> with SingleTickerProviderStateMixin {
                                 width: MediaQuery.of(context).size.width,
                                 height: 40,
                                 child: FlatButton(
-                                  color: Color.fromRGBO(18, 106, 175, 1),
+                                  color: colors["primary"],
                                   textColor: Color.fromRGBO(18, 106, 175, 1),
                                   disabledColor:
                                       Color.fromRGBO(157, 157, 157, 1),
                                   child: Text(
                                     "Send Now",
                                     style: TextStyle(
-                                        fontFamily: "worksans",
                                         color: Colors.white,
                                         fontSize: 17,
                                         fontWeight: FontWeight.w300),

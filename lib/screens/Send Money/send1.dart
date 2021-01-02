@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:kashout/screens/Send Money/send2.dart';
+import 'package:kashout/utils/colors.dart';
 
 class Send extends StatefulWidget {
   @override
@@ -9,12 +11,108 @@ class Send extends StatefulWidget {
 
 class _SendState extends State<Send> {
   TextEditingController accountController = TextEditingController();
+
+  process() async {
+    if (accountController.text.isNotEmpty) {
+      try {
+        dynamic accountNo;
+        dynamic accountNa;
+
+        await FirebaseFirestore.instance
+            .collection("users")
+            .where("accountNumber", isEqualTo: accountController.text)
+            .get()
+            .then((value) {
+          value.docs.forEach((result) {
+            print(result.data());
+            accountNo = result.data()["accountNumber"];
+            accountNa = result.data()["displayName"];
+            print(accountNa);
+            print(accountNo);
+          });
+        });
+      } catch (e) {
+        print(e);
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title:
+                  Text("An error occurred. Please confirm the account number"),
+              actions: <Widget>[
+                FlatButton(
+                  child: Text("OK"),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                    accountController.clear();
+                  },
+                ),
+              ],
+            );
+          },
+        );
+      }
+    } else {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Please enter a correct account number'),
+            actions: <Widget>[
+              FlatButton(
+                child: Text("OK"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                  accountController.clear();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: colors["background"],
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 25.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  GestureDetector(
+                    child: Icon(Icons.arrow_back_ios, size: 20.0),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  Text(
+                    "",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.bold,
+                        color: colors["primary"]),
+                  ),
+                  Icon(Icons.arrow_back_ios,
+                      size: 20.0, color: colors["background"]),
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 80.0, bottom: 15.0, right: 80.0),
+              child: Text(
+                "Send money instantly to anywhere in the world",
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+              ),
+            ),
             Padding(
               padding: EdgeInsets.all(8.0),
               child: Container(
@@ -50,7 +148,7 @@ class _SendState extends State<Send> {
                           padding: EdgeInsets.all(0.0),
                           child: Icon(
                             Icons.search,
-                            color: Colors.yellow,
+                            color: colors["primary"],
                           ),
                         ),
                         hintText: "Enter account number"),
@@ -90,13 +188,13 @@ class _SendState extends State<Send> {
                           height: 60,
                           child: CircleAvatar(
                             backgroundColor: Colors.transparent,
-                            backgroundImage: AssetImage(
-                                'assets/images/if_3_avatar_2754579.png'),
+                            backgroundImage:
+                                AssetImage('assets/images/avatar.png'),
                           ),
                         ),
-                        title: Text('Daniel',
+                        title: Text('Daniel Etuk',
                             style: TextStyle(fontFamily: "worksans")),
-                        subtitle: Text('348219093',
+                        subtitle: Text('556277757',
                             style: TextStyle(fontFamily: "worksans")),
                         onTap: () {
                           Navigator.of(context).push(
@@ -152,7 +250,29 @@ class _SendState extends State<Send> {
                   ),
                 ],
               ),
-            )
+            ),
+            GestureDetector(
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: 15.0),
+                margin: EdgeInsets.only(top: 30.0),
+                width: MediaQuery.of(context).size.width - 90.0,
+                decoration: BoxDecoration(
+                  color: colors["primary"],
+                  borderRadius: BorderRadius.circular(180.0),
+                ),
+                child: Text(
+                  "Continue",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xffffffff)),
+                ),
+              ),
+              onTap: () {
+                process();
+              },
+            ),
           ],
         ),
       ),

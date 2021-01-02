@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
 
 import 'package:community_material_icon/community_material_icon.dart';
+import 'package:kashout/utils/colors.dart';
 
 class Send3 extends StatefulWidget {
   @override
@@ -52,7 +53,7 @@ class _Send3State extends State<Send3> {
             elevation: 0,
             title: Text(
               'Enter amount',
-              style: TextStyle(fontFamily: "worksans", color: Colors.black),
+              style: TextStyle(color: Colors.black),
             ),
             centerTitle: true,
             actions: <Widget>[
@@ -97,7 +98,7 @@ class _Send3State extends State<Send3> {
                                 padding: EdgeInsetsDirectional.only(
                                     top: 13, start: 25),
                                 child: Text(
-                                  '\$',
+                                  '\₦',
                                   style: TextStyle(fontSize: 20),
                                 ),
                               ),
@@ -105,10 +106,7 @@ class _Send3State extends State<Send3> {
                                   fontFamily: "vistolsans", fontSize: 25),
                               border: InputBorder.none,
                             ),
-                            style: TextStyle(
-                                fontFamily: "sfprotext",
-                                color: Colors.black,
-                                fontSize: 50),
+                            style: TextStyle(color: Colors.black, fontSize: 50),
                             onChanged: (text) {
                               _checkInputForConfirm(double.parse(text));
                             },
@@ -120,13 +118,12 @@ class _Send3State extends State<Send3> {
                       width: MediaQuery.of(context).size.width,
                       height: 40,
                       child: FlatButton(
-                        color: Color.fromRGBO(18, 106, 175, 1),
+                        color: colors["primary"],
                         textColor: Color.fromRGBO(18, 106, 175, 1),
                         disabledColor: Color.fromRGBO(157, 157, 157, 1),
                         child: Text(
                           "Confirm",
                           style: TextStyle(
-                              fontFamily: "worksans",
                               color: Colors.white,
                               fontSize: 17,
                               fontWeight: FontWeight.w300),
