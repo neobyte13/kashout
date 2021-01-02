@@ -19,6 +19,9 @@ dependencies:
   google_fonts: ^1.1.1
   shared_preferences: ^0.5.12+4
 
+  community_material_icon: ^3.5.95
+  flutter_masked_text: ^0.8.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

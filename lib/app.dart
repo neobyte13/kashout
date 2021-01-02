@@ -5,6 +5,8 @@ import 'package:kashout/screens/Authentication/Signup/proceedToLogin.dart';
 import 'package:kashout/screens/Authentication/Signup/register.dart';
 import 'package:kashout/screens/Authentication/authStart.dart';
 import 'package:kashout/screens/Home/homescreen.dart';
+import 'package:kashout/screens/Loan/loan.dart';
+import 'package:kashout/screens/Send%20Money/send1.dart';
 
 class App extends StatelessWidget {
   @override
@@ -20,6 +22,8 @@ class App extends StatelessWidget {
         "/proceed-to-login": (context) => ProceedToLogin(),
         "/login": (context) => Login(),
         "/home": (context) => Home(),
+        "/loan": (context) => LoanScreen(),
+        "/send": (context) => Send(),
       },
     );
   }

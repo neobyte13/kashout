@@ -86,71 +86,76 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(bottom: 8),
-            height: 68,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                boxShadow: [
-                  BoxShadow(
-                      color: Color(0x04000000),
-                      blurRadius: 10,
-                      spreadRadius: 10,
-                      offset: Offset(0.0, 8.0))
-                ],
-                color: Color(0xFFFFFFFF)),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    SizedBox(
-                      width: 12,
-                    ),
-                    Container(
-                      width: 44,
-                      height: 44,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color(0xFFF9F9F9),
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/send.png'),
+          InkWell(
+            onTap: () {
+              Navigator.of(context).pushNamed('/send');
+            },
+            child: Container(
+              margin: EdgeInsets.only(bottom: 8),
+              height: 68,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Color(0x04000000),
+                        blurRadius: 10,
+                        spreadRadius: 10,
+                        offset: Offset(0.0, 8.0))
+                  ],
+                  color: Color(0xFFFFFFFF)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      SizedBox(
+                        width: 12,
+                      ),
+                      Container(
+                        width: 44,
+                        height: 44,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Color(0xFFF9F9F9),
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/send.png'),
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 12,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'Send Money',
-                          style: GoogleFonts.nunito(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w700,
-                              color: Color(0xFF212121)),
-                        ),
-                        Text(
-                          'Easily send money anywhere',
-                          style: GoogleFonts.nunito(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w700,
-                              color: Color(0x50212121)),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-                Row(
-                  children: <Widget>[
-                    SizedBox(
-                      width: 10,
-                    )
-                  ],
-                )
-              ],
+                      SizedBox(
+                        width: 12,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'Send Money',
+                            style: GoogleFonts.nunito(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xFF212121)),
+                          ),
+                          Text(
+                            'Easily send money anywhere',
+                            style: GoogleFonts.nunito(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0x50212121)),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      SizedBox(
+                        width: 10,
+                      )
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
           Container(
@@ -418,7 +423,7 @@ class _HomeState extends State<Home> {
                               left: 16,
                               top: 81,
                               child: Text(
-                                '₦ ' +
+                                '\₦ ' +
                                     snapshot.data["accountBalance"].toString(),
                                 style: TextStyle(
                                   fontSize: 20,
