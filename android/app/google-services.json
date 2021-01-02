@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "99139479264",
+    "project_id": "kashout-1",
+    "storage_bucket": "kashout-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:99139479264:android:f0559b321a102e4cee5285",
+        "android_client_info": {
+          "package_name": "com.daniel.kashout"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "99139479264-rcjk38uc65rj6dipsc1sf7o34bded4ik.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNttZ2YXUxBcWGP2c4dYiVVvc4GXm92Vk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "99139479264-rcjk38uc65rj6dipsc1sf7o34bded4ik.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
