@@ -6,6 +6,10 @@ import 'package:kashout/screens/Send%20Money/send3.dart';
 import 'package:kashout/utils/colors.dart';
 
 class Send2 extends StatefulWidget {
+  final String accNo;
+  final String accNa;
+
+  const Send2({Key key, this.accNo, this.accNa}) : super(key: key);
   @override
   _Send2State createState() => _Send2State();
 }
@@ -129,7 +133,7 @@ class _Send2State extends State<Send2> with SingleTickerProviderStateMixin {
                   ),
                   onPressed: () => Navigator.pop(context, false),
                 ),
-                title: Text('Send to Daniel',
+                title: Text('Send to ${widget.accNa}',
                     style: TextStyle(color: Colors.black)),
                 centerTitle: true,
                 backgroundColor: Colors.transparent,
@@ -153,7 +157,7 @@ class _Send2State extends State<Send2> with SingleTickerProviderStateMixin {
                       ),
                       SizedBox(height: 15),
                       Text(
-                        'Daniel Etuk',
+                        widget.accNa,
                         style: TextStyle(
                             fontSize: 22, fontWeight: FontWeight.w500),
                       ),
@@ -164,7 +168,7 @@ class _Send2State extends State<Send2> with SingleTickerProviderStateMixin {
                           color: colors["primary"],
                           textColor: Colors.white,
                           child: Text(
-                            "674532196",
+                            widget.accNo,
                             style: TextStyle(
                                 fontFamily: "worksans",
                                 color: Colors.white,

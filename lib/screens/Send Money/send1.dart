@@ -20,15 +20,20 @@ class _SendState extends State<Send> {
 
         await FirebaseFirestore.instance
             .collection("users")
-            .where("accountNumber", isEqualTo: accountController.text)
+            .where("accountNumber",
+                isEqualTo: accountController.text.toString().trim())
+            .limit(1)
             .get()
             .then((value) {
           value.docs.forEach((result) {
             print(result.data());
-            accountNo = result.data()["accountNumber"];
-            accountNa = result.data()["displayName"];
+            accountNo = result.data()["accountNumber"].toString();
+            accountNa = result.data()["displayName"].toString();
             print(accountNa);
             print(accountNo);
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) =>
+                    Send2(accNo: accountNo, accNa: accountNa)));
           });
         });
       } catch (e) {
