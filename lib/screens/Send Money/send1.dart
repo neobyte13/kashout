@@ -202,8 +202,11 @@ class _SendState extends State<Send> {
                         subtitle: Text('556277757',
                             style: TextStyle(fontFamily: "worksans")),
                         onTap: () {
-                          Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) => Send2()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => Send2(
+                                    accNa: "Daniel Etuk",
+                                    accNo: "556277757",
+                                  )));
                         },
                       ),
                       // ListTile(

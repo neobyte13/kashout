@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'dart:ui';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:kashout/screens/Send%20Money/send3.dart';
@@ -9,7 +11,7 @@ class Send2 extends StatefulWidget {
   final String accNo;
   final String accNa;
 
-  const Send2({Key key, this.accNo, this.accNa}) : super(key: key);
+  const Send2({this.accNo, this.accNa});
   @override
   _Send2State createState() => _Send2State();
 }
@@ -52,12 +54,75 @@ class _Send2State extends State<Send2> with SingleTickerProviderStateMixin {
     super.dispose();
   }
 
-  _startPayment() {
-    setState(() {
-      showPageLoader = true;
-      showSpinner = true;
-      animationController.forward();
-    });
+  _startPayment() async {
+    try {
+      var firebaseUser = FirebaseAuth.instance.currentUser;
+      int oldAccountBalance = 0;
+
+      await FirebaseFirestore.instance
+          .collection("users")
+          .doc(firebaseUser.uid)
+          .get()
+          .then((value) {
+        oldAccountBalance = value.data()["accountBalance"];
+      });
+
+      int newAccountBalance = oldAccountBalance - int.parse(amountValue);
+
+      await FirebaseFirestore.instance
+          .collection("users")
+          .doc(firebaseUser.uid)
+          .update({"accountBalance": newAccountBalance}).then((_) {
+        print("acct updated");
+      });
+
+      await FirebaseFirestore.instance
+          .collection("users")
+          .where("accountNumber", isEqualTo: widget.accNo.toString().trim())
+          .limit(1)
+          .get()
+          .then((value) {
+        value.docs.forEach((result) {
+          print(result.data());
+          var accountBa = result.data()["accountBalance"].toString();
+          var accountUid = result.id;
+
+          print(accountBa);
+          int recvNewAccountBalance =
+              int.parse(accountBa) + int.parse(amountValue);
+          FirebaseFirestore.instance
+              .collection("users")
+              .doc(accountUid)
+              .update({"accountBalance": recvNewAccountBalance}).then((_) {
+            print("recv acct updated");
+          });
+        });
+      });
+
+      setState(() {
+        showPageLoader = true;
+        showSpinner = true;
+        animationController.forward();
+      });
+    } catch (e) {
+      print(e);
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: new Text(e.toString()),
+            actions: <Widget>[
+              FlatButton(
+                child: new Text("OK"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    }
   }
 
   Widget _showPageLoader() {
@@ -289,7 +354,7 @@ class _Send2State extends State<Send2> with SingleTickerProviderStateMixin {
                                           fontWeight: FontWeight.w500),
                                     ),
                                     Text(
-                                      '7865432123',
+                                      '',
                                       style: TextStyle(
                                           fontSize: 12,
                                           color:

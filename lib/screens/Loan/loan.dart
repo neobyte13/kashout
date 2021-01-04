@@ -27,7 +27,7 @@ class _LoanScreenState extends State<LoanScreen> {
                   try {
                     //_showNotification();
                     var firebaseUser = FirebaseAuth.instance.currentUser;
-                    int oldAccountBalance;
+                    int oldAccountBalance = 0;
 
                     await FirebaseFirestore.instance
                         .collection("users")
