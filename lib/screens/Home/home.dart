@@ -133,7 +133,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               fontSize: 16.0, height: 1.6),
                                         ),
                                         Text(
-                                          '\₦ ' +
+                                          '₦ ' +
                                               oCcy.format(snapshot
                                                   .data["accountBalance"]),
                                           textAlign: TextAlign.left,
@@ -181,334 +181,332 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
-                  Expanded(
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                          left: 20.0, right: 20.0, bottom: 20.0),
-                      child: GridView.count(
-                        shrinkWrap: true,
-                        primary: false,
-                        crossAxisCount: 4,
-                        childAspectRatio: 0.7,
-                        children: [
-                          Column(
-                            children: [
-                              Expanded(
-                                child: InkWell(
-                                  onTap: () {
-                                    Navigator.of(context).pushNamed('/send');
-                                  },
-                                  child: Container(
-                                    margin: EdgeInsets.all(4),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      color: Color(0xfff1f3f6),
+                  Padding(
+                    padding:
+                        EdgeInsets.only(left: 20.0, right: 20.0, bottom: 20.0),
+                    child: GridView.count(
+                      shrinkWrap: true,
+                      primary: false,
+                      crossAxisCount: 4,
+                      childAspectRatio: 0.7,
+                      children: [
+                        Column(
+                          children: [
+                            Expanded(
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.of(context).pushNamed('/send');
+                                },
+                                child: Container(
+                                  margin: EdgeInsets.all(4),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(20),
                                     ),
-                                    child: Center(
-                                      child: Container(
-                                        margin: EdgeInsets.all(25),
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: AssetImage(
-                                                'assets/images/sendMoney.png'),
-                                          ),
+                                    color: Color(0xfff1f3f6),
+                                  ),
+                                  child: Center(
+                                    child: Container(
+                                      margin: EdgeInsets.all(25),
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/sendMoney.png'),
                                         ),
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: 5,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "Send Money",
+                              style: TextStyle(
+                                fontSize: 14,
                               ),
-                              Text(
-                                "Send Money",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                ),
-                                textAlign: TextAlign.center,
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Expanded(
-                                child: InkWell(
-                                  onTap: () {},
-                                  child: Container(
-                                    margin: EdgeInsets.all(4),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      color: Color(0xfff1f3f6),
+                              textAlign: TextAlign.center,
+                            )
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Expanded(
+                              child: InkWell(
+                                onTap: () {},
+                                child: Container(
+                                  margin: EdgeInsets.all(4),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(20),
                                     ),
-                                    child: Center(
-                                      child: Container(
-                                        margin: EdgeInsets.all(25),
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: AssetImage(
-                                                'assets/images/receiveMoney.png'),
-                                          ),
+                                    color: Color(0xfff1f3f6),
+                                  ),
+                                  child: Center(
+                                    child: Container(
+                                      margin: EdgeInsets.all(25),
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/receiveMoney.png'),
                                         ),
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: 5,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "Receive Money",
+                              style: TextStyle(
+                                fontSize: 14,
                               ),
-                              Text(
-                                "Receive Money",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                ),
-                                textAlign: TextAlign.center,
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Expanded(
-                                child: InkWell(
-                                  onTap: () {},
-                                  child: Container(
-                                    margin: EdgeInsets.all(4),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      color: Color(0xfff1f3f6),
+                              textAlign: TextAlign.center,
+                            )
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Expanded(
+                              child: InkWell(
+                                onTap: () {},
+                                child: Container(
+                                  margin: EdgeInsets.all(4),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(20),
                                     ),
-                                    child: Center(
-                                      child: Container(
-                                        margin: EdgeInsets.all(25),
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: AssetImage(
-                                                'assets/images/phone.png'),
-                                          ),
+                                    color: Color(0xfff1f3f6),
+                                  ),
+                                  child: Center(
+                                    child: Container(
+                                      margin: EdgeInsets.all(25),
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/phone.png'),
                                         ),
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: 5,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "Mobile Topup",
+                              style: TextStyle(
+                                fontSize: 14,
                               ),
-                              Text(
-                                "Mobile Topup",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                ),
-                                textAlign: TextAlign.center,
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Expanded(
-                                child: InkWell(
-                                  onTap: () {},
-                                  child: Container(
-                                    margin: EdgeInsets.all(4),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      color: Color(0xfff1f3f6),
+                              textAlign: TextAlign.center,
+                            )
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Expanded(
+                              child: InkWell(
+                                onTap: () {},
+                                child: Container(
+                                  margin: EdgeInsets.all(4),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(20),
                                     ),
-                                    child: Center(
-                                      child: Container(
-                                        margin: EdgeInsets.all(25),
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: AssetImage(
-                                                'assets/images/electricity.png'),
-                                          ),
+                                    color: Color(0xfff1f3f6),
+                                  ),
+                                  child: Center(
+                                    child: Container(
+                                      margin: EdgeInsets.all(25),
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/electricity.png'),
                                         ),
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: 5,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "Electricity Bill",
+                              style: TextStyle(
+                                fontSize: 14,
                               ),
-                              Text(
-                                "Electricity Bill",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                ),
-                                textAlign: TextAlign.center,
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Expanded(
-                                child: InkWell(
-                                  onTap: () {
-                                    Navigator.of(context).pushNamed('/loan');
-                                  },
-                                  child: Container(
-                                    margin: EdgeInsets.all(4),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      color: Color(0xfff1f3f6),
+                              textAlign: TextAlign.center,
+                            )
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Expanded(
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.of(context).pushNamed('/loan');
+                                },
+                                child: Container(
+                                  margin: EdgeInsets.all(4),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(20),
                                     ),
-                                    child: Center(
-                                      child: Container(
-                                        margin: EdgeInsets.all(25),
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: AssetImage(
-                                                'assets/images/tag.png'),
-                                          ),
+                                    color: Color(0xfff1f3f6),
+                                  ),
+                                  child: Center(
+                                    child: Container(
+                                      margin: EdgeInsets.all(25),
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/tag.png'),
                                         ),
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: 5,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "Request Loan",
+                              style: TextStyle(
+                                fontSize: 14,
                               ),
-                              Text(
-                                "Request Loan",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                ),
-                                textAlign: TextAlign.center,
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Expanded(
-                                child: InkWell(
-                                  onTap: () {},
-                                  child: Container(
-                                    margin: EdgeInsets.all(4),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      color: Color(0xfff1f3f6),
+                              textAlign: TextAlign.center,
+                            )
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Expanded(
+                              child: InkWell(
+                                onTap: () {},
+                                child: Container(
+                                  margin: EdgeInsets.all(4),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(20),
                                     ),
-                                    child: Center(
-                                      child: Container(
-                                        margin: EdgeInsets.all(25),
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: AssetImage(
-                                                'assets/images/movie.png'),
-                                          ),
+                                    color: Color(0xfff1f3f6),
+                                  ),
+                                  child: Center(
+                                    child: Container(
+                                      margin: EdgeInsets.all(25),
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/movie.png'),
                                         ),
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: 5,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "Movie Tickets",
+                              style: TextStyle(
+                                fontSize: 14,
                               ),
-                              Text(
-                                "Movie Tickets",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                ),
-                                textAlign: TextAlign.center,
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Expanded(
-                                child: InkWell(
-                                  onTap: () {},
-                                  child: Container(
-                                    margin: EdgeInsets.all(4),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      color: Color(0xfff1f3f6),
+                              textAlign: TextAlign.center,
+                            )
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Expanded(
+                              child: InkWell(
+                                onTap: () {},
+                                child: Container(
+                                  margin: EdgeInsets.all(4),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(20),
                                     ),
-                                    child: Center(
-                                      child: Container(
-                                        margin: EdgeInsets.all(25),
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: AssetImage(
-                                                'assets/images/flight.png'),
-                                          ),
+                                    color: Color(0xfff1f3f6),
+                                  ),
+                                  child: Center(
+                                    child: Container(
+                                      margin: EdgeInsets.all(25),
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/flight.png'),
                                         ),
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: 5,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "Flight Tickets",
+                              style: TextStyle(
+                                fontSize: 14,
                               ),
-                              Text(
-                                "Flight Tickets",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                ),
-                                textAlign: TextAlign.center,
-                              )
-                            ],
-                          ),
-                          Column(
-                            children: [
-                              Expanded(
-                                child: InkWell(
-                                  onTap: () {},
-                                  child: Container(
-                                    margin: EdgeInsets.all(4),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(20),
-                                      ),
-                                      color: Color(0xfff1f3f6),
+                              textAlign: TextAlign.center,
+                            )
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Expanded(
+                              child: InkWell(
+                                onTap: () {},
+                                child: Container(
+                                  margin: EdgeInsets.all(4),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(20),
                                     ),
-                                    child: Center(
-                                      child: Container(
-                                        margin: EdgeInsets.all(25),
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: AssetImage(
-                                                'assets/images/more.png'),
-                                          ),
+                                    color: Color(0xfff1f3f6),
+                                  ),
+                                  child: Center(
+                                    child: Container(
+                                      margin: EdgeInsets.all(25),
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/more.png'),
                                         ),
                                       ),
                                     ),
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: 5,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "More",
+                              style: TextStyle(
+                                fontSize: 14,
                               ),
-                              Text(
-                                "More",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                ),
-                                textAlign: TextAlign.center,
-                              )
-                            ],
-                          ),
-                        ],
-                      ),
+                              textAlign: TextAlign.center,
+                            )
+                          ],
+                        ),
+                      ],
                     ),
                   ),
                 ],
