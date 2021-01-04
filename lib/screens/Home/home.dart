@@ -14,6 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: Container(
         color: colors["background"],
+        height: size.height,
         child: ListView(
           shrinkWrap: true,
           children: <Widget>[
@@ -170,6 +171,326 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 60,
                         width: 60,
                         child: Icon(Icons.dialpad),
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: GridView.count(
+                shrinkWrap: true,
+                primary: false,
+                crossAxisCount: 4,
+                childAspectRatio: 0.7,
+                children: [
+                  Column(
+                    children: [
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Container(
+                            margin: EdgeInsets.all(4),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                              color: Color(0xfff1f3f6),
+                            ),
+                            child: Center(
+                              child: Container(
+                                margin: EdgeInsets.all(25),
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/images/sendMoney.png'),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        "Send Money",
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                        textAlign: TextAlign.center,
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Container(
+                            margin: EdgeInsets.all(4),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                              color: Color(0xfff1f3f6),
+                            ),
+                            child: Center(
+                              child: Container(
+                                margin: EdgeInsets.all(25),
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/images/receiveMoney.png'),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        "Receive Money",
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                        textAlign: TextAlign.center,
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Container(
+                            margin: EdgeInsets.all(4),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                              color: Color(0xfff1f3f6),
+                            ),
+                            child: Center(
+                              child: Container(
+                                margin: EdgeInsets.all(25),
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image:
+                                        AssetImage('assets/images/phone.png'),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        "Mobile Topup",
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                        textAlign: TextAlign.center,
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Container(
+                            margin: EdgeInsets.all(4),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                              color: Color(0xfff1f3f6),
+                            ),
+                            child: Center(
+                              child: Container(
+                                margin: EdgeInsets.all(25),
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(
+                                        'assets/images/electricity.png'),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        "Electricity Bil",
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                        textAlign: TextAlign.center,
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Container(
+                            margin: EdgeInsets.all(4),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                              color: Color(0xfff1f3f6),
+                            ),
+                            child: Center(
+                              child: Container(
+                                margin: EdgeInsets.all(25),
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage('assets/images/tag.png'),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        "Request Loan",
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                        textAlign: TextAlign.center,
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Container(
+                            margin: EdgeInsets.all(4),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                              color: Color(0xfff1f3f6),
+                            ),
+                            child: Center(
+                              child: Container(
+                                margin: EdgeInsets.all(25),
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image:
+                                        AssetImage('assets/images/movie.png'),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        "Movie Tickets",
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                        textAlign: TextAlign.center,
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Container(
+                            margin: EdgeInsets.all(4),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                              color: Color(0xfff1f3f6),
+                            ),
+                            child: Center(
+                              child: Container(
+                                margin: EdgeInsets.all(25),
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image:
+                                        AssetImage('assets/images/flight.png'),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        "Flight Tickets",
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                        textAlign: TextAlign.center,
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {},
+                          child: Container(
+                            margin: EdgeInsets.all(4),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                              color: Color(0xfff1f3f6),
+                            ),
+                            child: Center(
+                              child: Container(
+                                margin: EdgeInsets.all(25),
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage('assets/images/more.png'),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        "More",
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                        textAlign: TextAlign.center,
                       )
                     ],
                   ),
