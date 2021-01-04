@@ -156,28 +156,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
-
-                  // Padding(
-                  //   padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 25.0),
-                  //   child: Row(
-                  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  //     children: <Widget>[
-                  //       Text(
-                  //         "Promo",
-                  //         textAlign: TextAlign.center,
-                  //         style: TextStyle(
-                  //             fontSize: 16.0,
-                  //             fontWeight: FontWeight.bold,
-                  //             color: Colors.black),
-                  //       ),
-                  //       Container(),
-                  //       GestureDetector(
-                  //         child: Icon(Icons.arrow_forward_ios, size: 20.0),
-                  //         onTap: () {},
-                  //       ),
-                  //     ],
-                  //   ),
-                  // ),
                   Padding(
                     padding:
                         EdgeInsets.symmetric(horizontal: 20.0, vertical: 25.0),

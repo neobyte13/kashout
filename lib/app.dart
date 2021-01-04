@@ -1,3 +1,4 @@
+//@dart=2.11
 import 'package:flutter/material.dart';
 import 'package:kashout/screens/Authentication/Login/login.dart';
 import 'package:kashout/screens/Authentication/Signup/fingerprint.dart';
