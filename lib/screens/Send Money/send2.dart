@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import 'package:kashout/screens/Send%20Money/send3.dart';
 import 'package:kashout/utils/colors.dart';
+import 'package:intl/intl.dart';
 
 class Send2 extends StatefulWidget {
   final String accNo;
@@ -17,12 +18,13 @@ class Send2 extends StatefulWidget {
 }
 
 class _Send2State extends State<Send2> with SingleTickerProviderStateMixin {
-  String amountValue = '0.00';
+  String amountValue = '000';
   bool showAddNote = false;
   bool showPageLoader = false;
   bool showSpinner = false;
   bool showChecked = false;
   AnimationController animationController;
+  final oCcy = new NumberFormat("#,##0.00", "en_NG");
 
   @override
   void initState() {
@@ -271,7 +273,8 @@ class _Send2State extends State<Send2> with SingleTickerProviderStateMixin {
                                     SizedBox(width: 5),
                                     InkWell(
                                       child: Text(
-                                        this.amountValue.toString(),
+                                        oCcy.format(
+                                            int.parse(this.amountValue)),
                                         style: TextStyle(
                                             fontSize: 16,
                                             fontWeight: FontWeight.w500),
