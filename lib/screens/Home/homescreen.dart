@@ -7,6 +7,7 @@ import 'package:kashout/utils/colors.dart';
 import 'package:kashout/utils/customIcon.dart';
 import 'package:kashout/utils/sharedPrefs.dart';
 import 'package:intl/intl.dart';
+import 'dart:convert';
 
 class Home extends StatefulWidget {
   @override
@@ -428,7 +429,8 @@ class _HomeState extends State<Home> {
                               left: 16,
                               top: 81,
                               child: Text(
-                                '\₦ ' +
+                                utf8.decode([0xE2, 0x82, 0xA6]) +
+                                    ' ' +
                                     oCcy.format(
                                         snapshot.data["accountBalance"]),
                                 style: TextStyle(
