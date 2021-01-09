@@ -429,11 +429,12 @@ class _HomeState extends State<Home> {
                               left: 16,
                               top: 81,
                               child: Text(
-                                utf8.decode([0xE2, 0x82, 0xA6]) +
+                                '\u{20A6}' +
                                     ' ' +
                                     oCcy.format(
                                         snapshot.data["accountBalance"]),
                                 style: TextStyle(
+                                  fontFamily: 'Roboto',
                                   fontSize: 20,
                                   fontWeight: FontWeight.w700,
                                   color: Color(0xFF212121),
