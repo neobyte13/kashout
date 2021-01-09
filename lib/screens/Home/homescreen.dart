@@ -20,76 +20,6 @@ class _HomeState extends State<Home> {
       child: ListView(
         padding: EdgeInsets.only(left: 16, right: 16),
         children: [
-          Container(
-            margin: EdgeInsets.only(bottom: 8),
-            height: 68,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                boxShadow: [
-                  BoxShadow(
-                      color: Color(0x04000000),
-                      blurRadius: 10,
-                      spreadRadius: 10,
-                      offset: Offset(0.0, 8.0))
-                ],
-                color: Color(0xFFFFFFFF)),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    SizedBox(
-                      width: 12,
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        width: 44,
-                        height: 44,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Color(0xFFF9F9F9),
-                          image: DecorationImage(
-                            image: AssetImage('assets/images/topup.png'),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 12,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'Mobile Top Up',
-                          style: GoogleFonts.nunito(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w700,
-                              color: Color(0xFF212121)),
-                        ),
-                        Text(
-                          'Buy airtime or data',
-                          style: GoogleFonts.nunito(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w700,
-                              color: Color(0x50212121)),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-                Row(
-                  children: <Widget>[
-                    SizedBox(
-                      width: 10,
-                    )
-                  ],
-                )
-              ],
-            ),
-          ),
           InkWell(
             onTap: () {
               Navigator.of(context).pushNamed('/send');
@@ -162,73 +92,6 @@ class _HomeState extends State<Home> {
               ),
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(bottom: 8),
-            height: 68,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                boxShadow: [
-                  BoxShadow(
-                      color: Color(0x04000000),
-                      blurRadius: 10,
-                      spreadRadius: 10,
-                      offset: Offset(0.0, 8.0))
-                ],
-                color: Color(0xFFFFFFFF)),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Row(
-                  children: <Widget>[
-                    SizedBox(
-                      width: 12,
-                    ),
-                    Container(
-                      width: 44,
-                      height: 44,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color(0xFFF9F9F9),
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/pay.png'),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 12,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'Pay Bills',
-                          style: GoogleFonts.nunito(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w700,
-                              color: Color(0xFF212121)),
-                        ),
-                        Text(
-                          'Pay all bills from a single spot',
-                          style: GoogleFonts.nunito(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w700,
-                              color: Color(0x50212121)),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-                Row(
-                  children: <Widget>[
-                    SizedBox(
-                      width: 10,
-                    )
-                  ],
-                )
-              ],
-            ),
-          ),
           InkWell(
             onTap: () => Navigator.of(context).pushNamed('/loan'),
             child: Container(
@@ -279,6 +142,149 @@ class _HomeState extends State<Home> {
                           ),
                           Text(
                             'Get loans completely hassle free',
+                            style: GoogleFonts.nunito(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0x50212121)),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      SizedBox(
+                        width: 10,
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
+          Opacity(
+            opacity: 0.2,
+            child: Container(
+              margin: EdgeInsets.only(bottom: 8),
+              height: 68,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Color(0x04000000),
+                        blurRadius: 10,
+                        spreadRadius: 10,
+                        offset: Offset(0.0, 8.0))
+                  ],
+                  color: Color(0xFFFFFFFF)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      SizedBox(
+                        width: 12,
+                      ),
+                      InkWell(
+                        onTap: () {},
+                        child: Container(
+                          width: 44,
+                          height: 44,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Color(0xFFF9F9F9),
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/topup.png'),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 12,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'Mobile Top Up',
+                            style: GoogleFonts.nunito(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xFF212121)),
+                          ),
+                          Text(
+                            'Buy airtime or data',
+                            style: GoogleFonts.nunito(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0x50212121)),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      SizedBox(
+                        width: 10,
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
+          Opacity(
+            opacity: 0.2,
+            child: Container(
+              margin: EdgeInsets.only(bottom: 8),
+              height: 68,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Color(0x04000000),
+                        blurRadius: 10,
+                        spreadRadius: 10,
+                        offset: Offset(0.0, 8.0))
+                  ],
+                  color: Color(0xFFFFFFFF)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      SizedBox(
+                        width: 12,
+                      ),
+                      Container(
+                        width: 44,
+                        height: 44,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Color(0xFFF9F9F9),
+                          image: DecorationImage(
+                            image: AssetImage('assets/images/pay.png'),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 12,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'Pay Bills',
+                            style: GoogleFonts.nunito(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xFF212121)),
+                          ),
+                          Text(
+                            'Pay all bills from a single spot',
                             style: GoogleFonts.nunito(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w700,
