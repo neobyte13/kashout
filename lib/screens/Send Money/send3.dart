@@ -2,10 +2,9 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:flutter_masked_text/flutter_masked_text.dart';
-
 import 'package:community_material_icon/community_material_icon.dart';
 import 'package:kashout/utils/colors.dart';
+import 'package:intl/intl.dart';
 
 class Send3 extends StatefulWidget {
   @override
@@ -13,19 +12,22 @@ class Send3 extends StatefulWidget {
 }
 
 class _Send3State extends State<Send3> {
-  var textFormFieldController =
-      MoneyMaskedTextController(decimalSeparator: '.', thousandSeparator: ',');
+  // var textFormFieldontroller =
+  //     MoneyMaskedTextController(decimalSeparator: '.', thousandSeparator: ',');
+
+  TextEditingController textFormFieldController = TextEditingController();
 
   bool _isButtonDisabled = true;
+  final oCcy = new NumberFormat("#,##0.00", "en_NG");
 
   @override
   void initState() {
-    textFormFieldController.updateValue(0.00);
+    textFormFieldController.text = '';
     super.initState();
   }
 
-  _checkInputForConfirm(double amount) {
-    if (amount > 0.0) {
+  _checkInputForConfirm(int amount) {
+    if (amount > 0) {
       setState(() {
         _isButtonDisabled = false;
       });
@@ -37,7 +39,7 @@ class _Send3State extends State<Send3> {
   }
 
   _startPayment() {
-    Navigator.of(context).pop(textFormFieldController.numberValue);
+    Navigator.of(context).pop(textFormFieldController.text);
   }
 
   @override
@@ -61,8 +63,7 @@ class _Send3State extends State<Send3> {
                 icon: Icon(CommunityMaterialIcons.close_circle,
                     color: Colors.black),
                 onPressed: () {
-                  Navigator.of(context)
-                      .pop(textFormFieldController.numberValue);
+                  Navigator.of(context).pushReplacementNamed('/send');
                 },
               ),
             ],
@@ -87,28 +88,28 @@ class _Send3State extends State<Send3> {
                         ),
                         Spacer(flex: 1),
                         Flexible(
-                          fit: FlexFit.loose,
+                          fit: FlexFit.tight,
                           flex: 2,
                           child: TextField(
                             controller: textFormFieldController,
-                            keyboardType: TextInputType.numberWithOptions(
-                                signed: false, decimal: true),
+                            keyboardType: TextInputType.number,
                             decoration: InputDecoration(
+                              hintText: '0.00',
                               prefixIcon: Padding(
                                 padding: EdgeInsetsDirectional.only(
                                     top: 13, start: 25),
                                 child: Text(
                                   '\₦',
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(fontSize: 16),
                                 ),
                               ),
                               prefixStyle: TextStyle(
-                                  fontFamily: "vistolsans", fontSize: 25),
+                                  fontFamily: "vistolsans", fontSize: 14),
                               border: InputBorder.none,
                             ),
-                            style: TextStyle(color: Colors.black, fontSize: 50),
+                            style: TextStyle(color: Colors.black, fontSize: 20),
                             onChanged: (text) {
-                              _checkInputForConfirm(double.parse(text));
+                              _checkInputForConfirm(int.parse(text));
                             },
                           ),
                         ),
